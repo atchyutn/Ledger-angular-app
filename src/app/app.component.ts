@@ -22,16 +22,24 @@ export class AppComponent {
 
 
   credit(amount: any, reason: any) {
-    this.transactionService.availableBalance = this.transactionService.availableBalance + parseInt(amount);
-    this.balance = this.transactionService.availableBalance;
-    this.transactionArray.push({ amount: amount, reason: reason, type: 'credit' });
-    this.transactionService.transactionData(this.data);
+    if (amount != '' && reason != '') {
+      this.transactionService.availableBalance = this.transactionService.availableBalance + parseInt(amount);
+      this.balance = this.transactionService.availableBalance;
+      this.transactionArray.push({ amount: amount, reason: reason, type: 'credit' });
+      this.transactionService.transactionData(this.data);
+    } else {
+      alert("Please enter amount and reason");
+    }
   }
 
   debit(amount: any, reason: any) {
-    this.transactionService.availableBalance = this.transactionService.availableBalance - parseInt(amount);
-    this.balance = this.transactionService.availableBalance;
-    this.transactionArray.push({ amount: amount, reason: reason, type: 'debit' });
-    this.transactionService.transactionData(this.data);
+    if (amount != '' && reason != '') {
+      this.transactionService.availableBalance = this.transactionService.availableBalance - parseInt(amount);
+      this.balance = this.transactionService.availableBalance;
+      this.transactionArray.push({ amount: amount, reason: reason, type: 'debit' });
+      this.transactionService.transactionData(this.data);
+    }else {
+      alert("Please enter amount and reason");
+    }
   }
 }
