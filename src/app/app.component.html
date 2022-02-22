@@ -16,8 +16,8 @@
               <input type="text" class="form-control"  placeholder="Enter Reason" #reason>
             </div>
              <div class="buttons">
-              <button class="btn btn-primary">Credit</button>
-              <button class="btn btn-primary">Credit</button>
+              <button class="btn btn-primary" (click)="credit(amount.value, reason.value)">Credit</button>
+              <button class="btn btn-primary" (click)="debit(amount.value, reason.value)">Credit</button>
             </div>
           </form>
 
