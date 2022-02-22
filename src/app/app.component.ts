@@ -38,6 +38,8 @@ export class AppComponent {
       this.balance = this.transactionService.availableBalance;
       this.transactionArray.push({ amount: amount, reason: reason, type: 'debit' });
       this.transactionService.transactionData(this.data);
+    }else if(amount > this.transactionService.availableBalance){
+      alert("Insufficient balance");
     }else {
       alert("Please enter amount and reason");
     }
