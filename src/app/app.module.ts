@@ -6,11 +6,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TransactionNavComponent } from './transaction-nav/transaction-nav.component';
+import { AvailableBalanceComponent } from './available-balance/available-balance.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-      TransactionNavComponent
+      TransactionNavComponent,
+      AvailableBalanceComponent
    ],
   imports: [
     BrowserModule,
