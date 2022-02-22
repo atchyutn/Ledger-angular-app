@@ -1,0 +1,20 @@
+.fields{
+  display: flex;
+}
+
+.fields input{
+  width: 200px;
+  margin-right: 20px;
+}
+
+.buttons{
+  margin-top: 30px;
+  display: flex;
+  float: right;
+}
+
+.buttons .btn{
+  width: 100px;
+  margin-right: 20px;
+}
+

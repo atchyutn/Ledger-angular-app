@@ -1,4 +1,5 @@
 import { TransactionsService } from './Shared/services/transactions.service';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -13,7 +14,9 @@ import { TransactionNavComponent } from './transaction-nav/transaction-nav.compo
    ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [TransactionsService],
   bootstrap: [AppComponent]
