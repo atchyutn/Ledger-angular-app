@@ -7,24 +7,16 @@ import { Observable, Subject } from 'rxjs';
 export class TransactionsService {
 
   availableBalance: number = 1000;
-  captureData$: Observable<any> | undefined;
-  private captureDataSubject = new Subject<any>();
+  transactionData$: Observable<any>;
+  private transactionDataSubject = new Subject<any>();
 
 
   constructor() {
-     this.captureData$ = this.captureDataSubject.asObservable();
+     this.transactionData$ = this.transactionDataSubject.asObservable();
   }
 
-  captureData(data: any) {
+  transactionData(data: any) {
     console.log(data);
-    this.captureDataSubject.next(data);
-  }
-
-  creditAmout() {
-    // this.availableBalance = this.availableBalance + this;
-  }
-
-   debitAmout(amount: any, reason: any) {
-    // this.availableBalance = this.availableBalance - amount;
+    this.transactionDataSubject.next(data);
   }
 }

@@ -24,14 +24,14 @@ export class AppComponent {
   credit(amount: any, reason: any) {
     this.transactionService.availableBalance = this.transactionService.availableBalance + parseInt(amount);
     this.balance = this.transactionService.availableBalance;
-    this.transactionArray = this.transactionArray.push({ amount: amount, reason: reason, type: 'credit' });
-    this.transactionService.captureData(this.data);
+    this.transactionArray.push({ amount: amount, reason: reason, type: 'credit' });
+    this.transactionService.transactionData(this.data);
   }
 
   debit(amount: any, reason: any) {
     this.transactionService.availableBalance = this.transactionService.availableBalance - parseInt(amount);
     this.balance = this.transactionService.availableBalance;
-    this.transactionArray = this.transactionArray.push({ amount: amount, reason: reason, type: 'debit' });
-    this.transactionService.captureData(this.data);
+    this.transactionArray.push({ amount: amount, reason: reason, type: 'debit' });
+    this.transactionService.transactionData(this.data);
   }
 }

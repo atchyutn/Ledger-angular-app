@@ -1,11 +1,29 @@
 <ul class="nav nav-tabs">
   <li class="nav-item">
-    <a class="nav-link active" href="#">All</a>
+    <button class="btn btn-primary" (click)="showAll()">All</button>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="#">Credit</a>
+    <button class="btn btn-success" (click)="showCredits()">Credit</button>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="#">Debit</a>
+    <button class="btn btn-danger" (click)="showDebits()">Debit</button>
   </li>
 </ul>
+
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Type of Transaction</th>
+      <th scope="col">Amout</th>
+      <th scope="col">Reason</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor = "let transaction of transactionArray">
+      <td>{{transaction.type}}</td>
+      <td>{{transaction.amount}}</td>
+      <td>{{transaction.reason}}</td>
+    </tr>
+  </tbody>
+</table>
